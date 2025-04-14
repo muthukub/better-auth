@@ -6,7 +6,10 @@ import {
 import { existsSync } from "fs";
 import type { SchemaGenerator } from "./types";
 
-export function convertToSnakeCase(str: string) {
+export function convertToSnakeCase(str: string, disableSnakeCase?: boolean) {
+	if (disableSnakeCase) {
+		return str;
+	}
 	return str.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
 }
 
@@ -41,7 +44,7 @@ export const generateDrizzleSchema: SchemaGenerator = async ({
 					`Database provider type is undefined during Drizzle schema generation. Please define a \`provider\` in the Drizzle adapter config. Read more at https://better-auth.com/docs/adapters/drizzle`,
 				);
 			}
-			name = convertToSnakeCase(name);
+			name = convertToSnakeCase(name, adapter.options?.disableSnakeCase);
 
 			if (field.references?.field === "id") {
 				if (options.advanced?.database?.useNumberId) {
@@ -127,9 +130,10 @@ export const generateDrizzleSchema: SchemaGenerator = async ({
 				id = `text('id').primaryKey()`;
 			}
 		}
-
+				
 		const schema = `export const ${modelName} = ${databaseType}Table("${convertToSnakeCase(
 			modelName,
+			adapter.options?.disableSnakeCase
 		)}", {
 					id: ${id},
 					${Object.keys(fields)

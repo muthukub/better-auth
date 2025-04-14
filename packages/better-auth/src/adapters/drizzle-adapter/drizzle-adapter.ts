@@ -36,6 +36,11 @@ export interface DrizzleAdapterConfig {
 	 */
 	usePlural?: boolean;
 	/**
+	 * Disable snake case conversion for field names
+	 * @default false
+	 */
+	disableSnakeCase?: boolean;
+	/**
 	 * Enable debug logs for the adapter
 	 *
 	 * @default false
@@ -49,6 +54,7 @@ export const drizzleAdapter = (db: DB, config: DrizzleAdapterConfig) =>
 			adapterId: "drizzle",
 			adapterName: "Drizzle Adapter",
 			usePlural: config.usePlural ?? false,
+			disableSnakeCase: config.disableSnakeCase ?? false,
 			debugLogs: config.debugLogs ?? false,
 		},
 		adapter: ({ getFieldName, debugLog }) => {
