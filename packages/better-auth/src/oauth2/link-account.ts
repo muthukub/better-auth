@@ -38,6 +38,13 @@ export async function handleOAuthUserInfo(
 	let user = dbUser?.user;
 	let isRegister = !user;
 
+	if (user?.banned) {
+		const errorURL = c.context.options.onAPIError?.errorURL || `${c.context.baseURL}/error`;
+		throw c.redirect(
+			`${errorURL}?error=user_banned&error_description=${encodeURIComponent(user.banReason || "Account has been banned")}`
+		);
+	}
+
 	if (dbUser) {
 		const hasBeenLinked = dbUser.accounts.find(
 			(a) => a.providerId === account.providerId,
