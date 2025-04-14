@@ -130,10 +130,10 @@ export const generateDrizzleSchema: SchemaGenerator = async ({
 				id = `text('id').primaryKey()`;
 			}
 		}
-				
+
 		const schema = `export const ${modelName} = ${databaseType}Table("${convertToSnakeCase(
 			modelName,
-			adapter.options?.disableSnakeCase
+			adapter.options?.disableSnakeCase,
 		)}", {
 					id: ${id},
 					${Object.keys(fields)
