@@ -39,9 +39,12 @@ export async function handleOAuthUserInfo(
 	let isRegister = !user;
 
 	if (user?.banned) {
-		const errorURL = c.context.options.onAPIError?.errorURL || `${c.context.baseURL}/error`;
+		const errorURL =
+			c.context.options.onAPIError?.errorURL || `${c.context.baseURL}/error`;
 		throw c.redirect(
-			`${errorURL}?error=user_banned&error_description=${encodeURIComponent(user.banReason || "Account has been banned")}`
+			`${errorURL}?error=user_banned&error_description=${encodeURIComponent(
+				user.banReason || "Account has been banned",
+			)}`,
 		);
 	}
 
