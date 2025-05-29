@@ -475,14 +475,7 @@ export const getOrgAdapter = (
 			return team as Team &
 				(IncludeMembers extends true ? { members: Member[] } : {});
 		},
-<<<<<<< refs/remotes/origin/feat/team-metadata
-		updateTeam: async (
-			teamId: string,
-			data: Partial<Team>,
-		) => {
-=======
 		updateTeam: async (teamId: string, data: Partial<Team>) => {
->>>>>>> local
 			const team = await adapter.update<Team>({
 				model: "team",
 				where: [
