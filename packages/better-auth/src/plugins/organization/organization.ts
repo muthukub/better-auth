@@ -425,6 +425,11 @@ export const organization = <O extends OrganizationOptions>(options?: O) => {
 							required: false,
 							fieldName: options?.schema?.team?.fields?.updatedAt,
 						},
+						metadata: {
+							type: "string",
+							required: false,
+							fieldName: options?.schema?.team?.fields?.metadata,
+						},
 					},
 				},
 			} satisfies AuthPluginSchema)

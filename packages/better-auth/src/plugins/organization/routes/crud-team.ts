@@ -20,8 +20,14 @@ export const createTeam = <O extends OrganizationOptions | undefined>(
 				organizationId: z.string().optional(),
 				name: z.string(),
 				metadata: z
+<<<<<<< refs/remotes/origin/feat/team-metadata
 					.record(z.string(), z.any())
 					.or(z.string().transform((v) => JSON.parse(v)))
+=======
+					.record(z.string(), z.any(), {
+						description: "The metadata of the team",
+					})
+>>>>>>> local
 					.optional(),
 			}),
 			use: [orgMiddleware],
@@ -36,12 +42,43 @@ export const createTeam = <O extends OrganizationOptions | undefined>(
 									schema: {
 										type: "object",
 										properties: {
+<<<<<<< refs/remotes/origin/feat/team-metadata
 											id: { type: "string", description: "Unique identifier of the created team" },
 											name: { type: "string", description: "Name of the team" },
 											organizationId: { type: "string", description: "ID of the organization the team belongs to" },
 											createdAt: { type: "string", format: "date-time", description: "Timestamp when the team was created" },
 											updatedAt: { type: "string", format: "date-time", description: "Timestamp when the team was last updated" },
 											metadata: { type: "object", description: "Metadata for the team" },
+=======
+											id: {
+												type: "string",
+												description: "Unique identifier of the created team",
+											},
+											name: {
+												type: "string",
+												description: "Name of the team",
+											},
+											organizationId: {
+												type: "string",
+												description:
+													"ID of the organization the team belongs to",
+											},
+											createdAt: {
+												type: "string",
+												format: "date-time",
+												description: "Timestamp when the team was created",
+											},
+											updatedAt: {
+												type: "string",
+												format: "date-time",
+												description: "Timestamp when the team was last updated",
+											},
+											metadata: z
+												.record(z.string(), z.any(), {
+													description: "The metadata of the team",
+												})
+												.optional(),
+>>>>>>> local
 										},
 										required: ["id", "name", "organizationId", "createdAt", "updatedAt"],
 									},

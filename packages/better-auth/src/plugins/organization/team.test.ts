@@ -213,7 +213,10 @@ describe("team", async (it) => {
 			expect(error).toBeDefined();
 		}
 	});
+<<<<<<< refs/remotes/origin/feat/team-metadata
 
+=======
+>>>>>>> local
 	it("should create a team with metadata and update its metadata", async () => {
 		const createTeamResponse = await client.organization.createTeam(
 			{
@@ -227,7 +230,12 @@ describe("team", async (it) => {
 		);
 		expect(createTeamResponse.data?.name).toBe("QA Team");
 		expect(createTeamResponse.data?.metadata).toBeDefined();
+<<<<<<< refs/remotes/origin/feat/team-metadata
 		expect(createTeamResponse.data?.metadata.foo).toBe("bar");
 		expect(createTeamResponse.data?.metadata.count).toBe("1");
+=======
+		expect(createTeamResponse.data?.metadata?.foo).toBe("bar");
+		expect(createTeamResponse.data?.metadata?.count).toBe("1");
+>>>>>>> local
 	});
 });
