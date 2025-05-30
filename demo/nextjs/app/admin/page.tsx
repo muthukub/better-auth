@@ -350,7 +350,7 @@ export default function AdminDashboard() {
 								</TableRow>
 							</TableHeader>
 							<TableBody>
-								{users?.map((user) => (
+								{users?.map((user: any) => (
 									<TableRow key={user.id}>
 										<TableCell>{user.email}</TableCell>
 										<TableCell>{user.name}</TableCell>
@@ -419,7 +419,7 @@ export default function AdminDashboard() {
 																	userId: user.id,
 																},
 																{
-																	onError(context) {
+																	onError(context: any) {
 																		toast.error(
 																			context.error.message ||
 																				"Failed to unban user",
