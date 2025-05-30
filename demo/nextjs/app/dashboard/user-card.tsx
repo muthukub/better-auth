@@ -153,7 +153,7 @@ export default function UserCard(props: {
 				</div>
 
 				{session?.user.emailVerified ? null : (
-					<Alert>
+					<Alert variant="default">
 						<AlertTitle>Verify Your Email Address</AlertTitle>
 						<AlertDescription className="text-muted-foreground">
 							Please verify your email address. Check your inbox for the
