@@ -34,7 +34,14 @@ function useChart() {
 	return context;
 }
 
-const ChartContainer = ({ ref, id, className, children, config, ...props }: any) => {
+const ChartContainer = ({
+	ref,
+	id,
+	className,
+	children,
+	config,
+	...props
+}: any) => {
 	const uniqueId = React.useId();
 	const chartId = `chart-${id || uniqueId.replace(/:/g, "")}`;
 
@@ -109,7 +116,7 @@ const ChartTooltipContent = ({
 	color,
 	nameKey,
 	labelKey,
-}: any ) => {
+}: any) => {
 	const { config } = useChart();
 
 	const tooltipLabel = React.useMemo(() => {
