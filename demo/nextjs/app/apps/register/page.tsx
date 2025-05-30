@@ -34,6 +34,7 @@ export default function RegisterOAuthClient() {
 			setIsSubmitting(false);
 			return;
 		}
+		// @ts-ignore
 		const res = await client.oauth2.register({
 			name,
 			icon: await convertImageToBase64(logo),
