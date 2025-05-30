@@ -6,7 +6,7 @@
     "dev": "next dev",
     "dev:secure": "next dev --experimental-https",
     "typecheck": "tsc --noEmit",
-    "build": "next build --no-type-check",
+    "build": "next build -- --no-type-check",
     "start": "next start",
     "lint": "next lint"
   },
