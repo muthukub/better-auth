@@ -302,13 +302,13 @@ importers:
         specifier: ^1.9.0
         version: 1.9.0
       '@types/node':
-        specifier: ^20.17.24
+        specifier: ^20
         version: 20.17.24
       '@types/react':
-        specifier: ^19.0.0
+        specifier: ^19
         version: 19.0.10
       '@types/react-dom':
-        specifier: ^19.0.0
+        specifier: ^19
         version: 19.0.4(@types/react@19.0.10)
       '@types/three':
         specifier: ^0.168.0
