@@ -285,9 +285,7 @@ export default function UserCard(props: {
 											<div className="flex flex-col gap-2">
 												<PasswordInput
 													value={twoFaPassword}
-													onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-														setTwoFaPassword(e.target.value)
-													}
+													onChange={(e) => setTwoFaPassword(e.target.value)}
 													placeholder="Enter Password"
 												/>
 												<Button
@@ -362,9 +360,7 @@ export default function UserCard(props: {
 											</Label>
 											<Input
 												value={twoFaPassword}
-												onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-													setTwoFaPassword(e.target.value)
-												}
+												onChange={(e) => setTwoFaPassword(e.target.value)}
 												placeholder="Enter OTP"
 											/>
 										</div>
@@ -375,9 +371,7 @@ export default function UserCard(props: {
 												id="password"
 												placeholder="Password"
 												value={twoFaPassword}
-												onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-													setTwoFaPassword(e.target.value)
-												}
+												onChange={(e) => setTwoFaPassword(e.target.value)}
 											/>
 										</div>
 									)}
@@ -562,27 +556,21 @@ function ChangePassword() {
 					<PasswordInput
 						id="current-password"
 						value={currentPassword}
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-							setCurrentPassword(e.target.value)
-						}
+						onChange={(e) => setCurrentPassword(e.target.value)}
 						autoComplete="new-password"
 						placeholder="Password"
 					/>
 					<Label htmlFor="new-password">New Password</Label>
 					<PasswordInput
 						value={newPassword}
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-							setNewPassword(e.target.value)
-						}
+						onChange={(e) => setNewPassword(e.target.value)}
 						autoComplete="new-password"
 						placeholder="New Password"
 					/>
 					<Label htmlFor="password">Confirm Password</Label>
 					<PasswordInput
 						value={confirmPassword}
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-							setConfirmPassword(e.target.value)
-						}
+						onChange={(e) => setConfirmPassword(e.target.value)}
 						autoComplete="new-password"
 						placeholder="Confirm Password"
 					/>
