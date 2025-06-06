@@ -293,7 +293,7 @@ export const stripe = <O extends StripeOptions>(options: O) => {
 				if (
 					existingSubscription &&
 					existingSubscription.status === "active" &&
-					existingSubscription.plan === ctx.body.plan && 
+					existingSubscription.plan === ctx.body.plan &&
 					(existingSubscription.seats || 1) === (ctx.body.seats || 1)
 				) {
 					throw new APIError("BAD_REQUEST", {
