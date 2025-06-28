@@ -12,5 +12,5 @@ export default defineBuildConfig({
 		"commander",
 	],
 	entries: ["./src/index.ts"],
-	failOnWarn: false
+	failOnWarn: false,
 });

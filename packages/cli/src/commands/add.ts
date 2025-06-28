@@ -122,4 +122,4 @@ export const add = new Command("add")
 			}
 			process.exit(1);
 		}
-	}); 
+	});
