@@ -63,6 +63,9 @@ importers:
 
   demo/nextjs:
     dependencies:
+      '@better-auth/cli':
+        specifier: ^1.2.10
+        version: link:../../packages/cli
       '@better-auth/stripe':
         specifier: workspace:*
         version: link:../../packages/stripe
@@ -1579,6 +1582,9 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.26.0
         version: 7.27.1(@babel/core@7.27.4)
+      '@better-auth/stripe':
+        specifier: workspace:^
+        version: link:../stripe
       '@clack/prompts':
         specifier: ^0.10.0
         version: 0.10.1
