@@ -1,5 +1,5 @@
 import { source } from "@/lib/source";
-import { DocsPage, DocsBody, DocsTitle } from "fumadocs-ui/page";
+import { DocsPage, DocsBody } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import { absoluteUrl } from "@/lib/utils";
 import DatabaseTable from "@/components/mdx/database-tables";
@@ -21,6 +21,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { contents } from "@/components/sidebar-content";
 import { Endpoint } from "@/components/endpoint";
 import { DividerText } from "@/components/divider-text";
+import { DocsHeader } from "@/components/docs-header";
 
 const { AutoTypeTable } = createTypeTable();
 
@@ -59,8 +60,12 @@ export default async function Page({
 				component: <div className="w-10 h-4" />,
 			}}
 		>
-			<DocsTitle>{page.data.title}</DocsTitle>
-			<DocsBody>
+			<DocsHeader
+				title={page.data.title}
+				description={page.data.description}
+				githubPath={page.file.path}
+			/>
+			<DocsBody className="">
 				<MDX
 					components={{
 						...defaultMdxComponents,

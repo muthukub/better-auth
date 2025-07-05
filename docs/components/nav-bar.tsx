@@ -54,7 +54,7 @@ export const Navbar = () => {
 		whitePng: WhitePng,
 	};
 	return (
-		<div className="flex flex-col sticky top-0 bg-background backdrop-blur-md z-30">
+		<div className="flex overflow-clip flex-col sticky top-0 bg-background backdrop-blur-md z-30">
 			<nav className="md:grid grid-cols-12 md:border-b top-0 flex items-center justify-between">
 				<Link
 					href="/"
