@@ -311,4 +311,4 @@ export interface OrganizationOptions {
 	 * @default false
 	 */
 	autoCreateOrganizationOnSignUp?: boolean;
-} 
+}

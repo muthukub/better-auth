@@ -1,12 +1,12 @@
 import { APIError } from "better-call";
 import { z } from "zod";
-import type { AuthPluginSchema, Session, User } from "../../types";
+import type { AuthPluginSchema } from "../../types";
 import { createAuthEndpoint } from "../../api/call";
 import { getSessionFromCtx } from "../../api/routes";
 import type { AuthContext } from "../../init";
 import type { BetterAuthPlugin } from "../../types/plugins";
 import { shimContext } from "../../utils/shim";
-import { type AccessControl, type Role } from "../access";
+import { type AccessControl } from "../access";
 import { getOrgAdapter } from "./adapter";
 import { orgSessionMiddleware } from "./call";
 import {
@@ -42,8 +42,6 @@ import {
 import type {
 	InferInvitation,
 	InferMember,
-	Invitation,
-	Member,
 	Organization,
 	Team,
 } from "./schema";
