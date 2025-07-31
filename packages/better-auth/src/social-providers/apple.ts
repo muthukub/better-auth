@@ -116,7 +116,10 @@ export const apple = (options: AppleOptions) => {
 			const { payload: jwtClaims } = await jwtVerify(token, publicKey, {
 				algorithms: [jwtAlg],
 				issuer: "https://appleid.apple.com",
-				audience: options.audience && options.audience.length ? options.audience : options.clientId,
+				audience:
+					options.audience && options.audience.length
+						? options.audience
+						: options.clientId,
 				maxTokenAge: "1h",
 			});
 			["email_verified", "is_private_email"].forEach((field) => {
